@@ -13,7 +13,7 @@ const Register = (props)=>{
     const [email, setEmail] = useState('')
     const handleSubmuit = async (e) =>{
         e.preventDefault()
-        // console.log(process.env.REACT_APP_REGISTER_EMAIL_URL)
+        console.log(process.env.REACT_APP_REGISTER_EMAIL_URL)
        const  config = {
             url : process.env.REACT_APP_REGISTER_EMAIL_URL,
             handleCodeInApp:true
