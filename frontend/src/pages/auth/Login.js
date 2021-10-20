@@ -189,7 +189,7 @@ const Login = (props)=>{
              onClick={googleLogin}
              shape = "round"
              block
-             icon = {<GoogleOutlined/>}
+             icon = {<GoogleOutlined/>} 
              className = {"mb-1 col-lg-12 d-block"}
              >Google sign In</Button>
              </div>
