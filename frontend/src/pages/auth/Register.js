@@ -18,7 +18,8 @@ const Register = (props)=>{
             url : process.env.REACT_APP_REGISTER_EMAIL_URL,
             handleCodeInApp:true
         }
-        console.log(config.url)
+        console.log(config.url) 
+        
 
         await auth.sendSignInLinkToEmail(email, config);
         toast.success(`Sign in link has been sent to ${email} please click to login`);
