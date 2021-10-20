@@ -191,7 +191,7 @@ const Login = (props)=>{
              block
              icon = {<GoogleOutlined/>} 
              className = {"mb-1 col-lg-12 d-block"}
-             >Google sign In</Button>
+             >Google sign In</Button> 
              </div>
              <Link to="/forgotten/password" className="h7 text-danger">Forgotten Password?</Link><br/>
              <Link to="/register" className="h7 text-danger">Don't have an account?, <span className="text-primary">Create one</span></Link>
