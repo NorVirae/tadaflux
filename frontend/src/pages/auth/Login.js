@@ -34,46 +34,47 @@ const Login = (props)=>{
     const properRedirect = (res) =>{
         console.log('INSIDE PROPER REDIRECT')
         console.log(res)
+        console.log(user, "THIS IS USER")
+        if (user){
+                if (user.activated == "false"){
+                    props.history.push("/activate/account")
+                    console.log("ACTIVATED JUST GOT EXECUTED")
 
-        if (user.activated == "false"){
-            props.history.push("/activate/account")
-            console.log("ACTIVATED JUST GOT EXECUTED")
-
-        }
-        
-        else if (user.activated == "true"){
-            props.history.push("/admin/dashboard")
-            console.log("ACTIVATED JUST GOT EXECUTED")
-
-        }
-
-        else if( typeof props.location.state != 'undefined'){
-            console.log("STATE JUST GOT EXECUTED")
-
-            if(props.location.state.role == 'suscriber'){
-                console.log("IN-------STATE JUST GOT EXECUTED")
+                }
                 
-            props.history.push("/user/d")
+                else if (user.activated == "true"){
+                    props.history.push("/admin/dashboard")
+                    console.log("ACTIVATED JUST GOT EXECUTED")
+
                 }
 
-        }else if(res.data.role == "admin"){
-            console.log("ADMIN JUST GOT EXECUTED")
-            
-            props.history.push("/admin/dashboard")
+                else if( typeof props.location.state != 'undefined'){
+                    console.log("STATE JUST GOT EXECUTED")
 
-        }else{
-        console.log("ELSE EXECUTED")
-        props.history.push("/")
+                    if(props.location.state.role == 'suscriber'){
+                        console.log("IN-------STATE JUST GOT EXECUTED")
+                        
+                    props.history.push("/user/d")
+                        }
 
-        }
-        
+                }else if(res.data.role == "admin"){
+                    console.log("ADMIN JUST GOT EXECUTED")
+                    
+                    props.history.push("/admin/dashboard")
+
+                }else{
+                console.log("ELSE EXECUTED")
+                props.history.push("/")
+
+                }
+            }
        
 
     }
 
     useEffect(()=>{
         if (user && user.token){
-            props.history.push("/activate/account")
+            props.history.push("/admin/dashboard")
         }
 
         return ()=>{}
@@ -132,10 +133,10 @@ const Login = (props)=>{
 
                     role:res.data.role}})
 
-
-
                     properRedirect(res)
+                    setLoading(false)
 
+                    
                 
 
             }).catch(err =>{
@@ -166,7 +167,7 @@ const Login = (props)=>{
                  placeholder={"password"} name={password}
                   onChange={e=>setPassword(e.target.value)}
                   value = {password}
-                   type={'email'} />
+                   type={'password'} />
                    </div>
 
 
@@ -175,7 +176,7 @@ const Login = (props)=>{
             <div className="form-group"><Button 
              type={"primary"}
              onClick={handleSubmuit}
-             disabled = {!email || password.length < 6}
+             disabled = {!email || password.length < 6||loading}
              shape = "round"
              block
              icon = {<MailOutlined/>}

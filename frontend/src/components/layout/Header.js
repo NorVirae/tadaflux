@@ -5,6 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import Logo from './partials/Logo';
 import { useDispatch, useSelector } from 'react-redux';
 import firebase from 'firebase';
+import { toast } from 'react-toastify';
 
 
 const propTypes = {
@@ -50,6 +51,7 @@ const Header = ({
       type:"LOGGED_OUT_USER",
       payload: null
     })
+    toast.success("you have been logged out")
     history.push("/login")
 
 }

@@ -11,7 +11,7 @@ const propTypes = {
 
 const defaultProps = {
   ...SectionProps.defaults,
-  split: false
+  split: false 
 }
 
 const Cta = ({
