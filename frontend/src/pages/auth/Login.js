@@ -27,13 +27,13 @@ const Login = (props)=>{
 
     // const createOrUpdateUser = async (authToken) => {
     //     console.log(process.env.REACT_APP_API)
-    //     return await axios.post("http://localhost:8000/api/createupdateuser", {},
+    //     return await axios.post(process.env.REACT_APP_LOCALHOST+"/api/createupdateuser", {},
     //         {headers:{authToken}})
     // }
     
     const properRedirect = (res) =>{
         console.log('INSIDE PROPER REDIRECT')
-        console.log(res)
+        console.log(res) 
         console.log(user, "THIS IS USER")
         if (user){
                 if (user.activated == "false"){
@@ -95,10 +95,12 @@ const Login = (props)=>{
                      token:idToken.token,
                         name: res.data.name,
                     picture: res.data.picture,
-                    activated: res.data.activated ,
+                    activated: res.data.activated,
 
                     role:res.data.role}})
-                 properRedirect(res)
+                    props.history.push("/admin/dashboard")
+
+                    properRedirect(res)
                     toast.success("Login successful!")
 
 
@@ -134,6 +136,8 @@ const Login = (props)=>{
                     role:res.data.role}})
 
                     properRedirect(res)
+                    props.history.push("/admin/dashboard")
+
                     setLoading(false)
 
                     

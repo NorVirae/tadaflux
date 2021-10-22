@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 // react-bootstrap components
 import {
@@ -13,7 +13,18 @@ import {
   Col,
 } from "react-bootstrap";
 
-function User() {
+import { useSelector } from "react-redux";
+import checkAct from "../functions/checkForActivation";
+
+function User(props) {
+  const user = useSelector(state=>state.user)
+
+  useEffect(()=>{
+    
+    checkAct(props, user)
+  return ()=>{}
+}, [])
+
   return (
     <>
       <Container fluid>

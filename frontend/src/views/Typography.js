@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React , {useState, useEffect} from "react";
 import { Modal  } from 'antd';
 
 
@@ -13,9 +13,17 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import checkAct from "../functions/checkForActivation";
+function Typography(props) {
+const [visible, setVisible] = useState(false)
+const user = useSelector(state=>state.user)
 
-function Typography() {
-  const [visible, setVisible] = useState(false)
+  useEffect(()=>{
+    
+    checkAct(props, user)
+  return ()=>{}
+}, [])
   return (
     <>
       <Container fluid>

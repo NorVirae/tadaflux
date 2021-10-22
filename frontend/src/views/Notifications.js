@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // react plugin for creating notifications over the dashboard
 import NotificationAlert from "react-notification-alert";
 import {Link} from 'react-router-dom';
@@ -16,8 +16,13 @@ import {
   Col,
 } from "react-bootstrap";
 
-function Notifications() {
+import { useSelector } from "react-redux";
+import checkAct from "../functions/checkForActivation";
+
+function Notifications(props) {
   const [showModal, setShowModal] = React.useState(false);
+const user = useSelector(state=>state.user)
+
   const notificationAlertRef = React.useRef(null);
   const notify = (place) => {
     var color = Math.floor(Math.random() * 5 + 1);
@@ -58,6 +63,13 @@ function Notifications() {
     };
     notificationAlertRef.current.notificationAlert(options);
   };
+
+  useEffect(()=>{
+    
+    checkAct(props, user)
+  return ()=>{}
+}, [])
+
   return (
     <>
       <div className="rna-container">

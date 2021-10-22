@@ -26,6 +26,8 @@ import { auth } from './firebase';
 import ActRoute from './utils/ActRoute';
 import UserDashboard from './pages/user/UserDash';
 import InfoPage from './pages/auth/InfoPage';
+import Features from './pages/Features';
+import RouteHF from './utils/RouteHF';
 
 
 
@@ -89,7 +91,7 @@ const App = () => {
           <Route exact path="/activate/account" component={CryptoPayPage} />
           <Route exact path="/user/d" component={UserDashboard} />
           <Route exact path="/info" component={InfoPage} />
-
+          <RouteHF exact path="/features" component={Features} />
           <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
           
 
@@ -106,6 +108,7 @@ const App = () => {
       children={() => (
         <Switch>
           <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+          
 
           {/* <AppRoute exact path="/" component={Login} layout={LayoutDefault} />
           <AppRoute exact path="/" component={Register} layout={LayoutDefault} />

@@ -21,6 +21,7 @@ import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
 import firebase from "firebase";
 import routes from "../../routes";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 function Header() {
 
@@ -35,6 +36,8 @@ function Header() {
       type:"LOGGED_OUT_USER",
       payload: null
     })
+    toast.success("you have been logged out")
+
     history.push("/login")
 
 }
