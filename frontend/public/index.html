@@ -14,6 +14,12 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
+    <script>
+      var host = "www.tadaflux.io" || "tadaflux.io";
+      if ((host == window.location.host) && (window.location.protocol != "https:")){
+      window.location.protocol = "https";
+      }
+      </script>
     
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
