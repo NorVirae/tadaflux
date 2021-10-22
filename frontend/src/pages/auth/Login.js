@@ -32,7 +32,8 @@ const Login = (props)=>{
     // }
     
     const properRedirect = (res) =>{
-        console.log('INSIDE PROPER REDIRECT')
+        console.log('INSIDE PROPER REDIRECT')  
+        
         console.log(res) 
         console.log(user, "THIS IS USER")
         if (user){
