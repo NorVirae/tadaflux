@@ -15,8 +15,10 @@ import {
 
 import { useSelector } from "react-redux";
 import checkAct from "../functions/checkForActivation";
+import UseRedirectToHttps from "../utils/useRedirectHttps";
 
 function User(props) {
+  UseRedirectToHttps()
   const user = useSelector(state=>state.user)
 
   useEffect(()=>{

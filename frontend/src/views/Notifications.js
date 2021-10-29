@@ -18,8 +18,11 @@ import {
 
 import { useSelector } from "react-redux";
 import checkAct from "../functions/checkForActivation";
+import UseRedirectToHttps from "../utils/useRedirectHttps";
+
 
 function Notifications(props) {
+  UseRedirectToHttps()
   const [showModal, setShowModal] = React.useState(false);
 const user = useSelector(state=>state.user)
 

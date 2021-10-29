@@ -15,6 +15,7 @@ import Logo from '../../components/layout/partials/Logo';
 import CoinbaseCommerceButton from 'react-coinbase-commerce';
 import 'react-coinbase-commerce/dist/coinbase-commerce-button.css';
 import { activateUser } from '../../functions/user';
+import UseRedirectToHttps from '../../utils/useRedirectHttps';
 // import PasswordStrengthBar from 'react-password-strength-bar';
 
 
@@ -22,6 +23,8 @@ import { activateUser } from '../../functions/user';
 
 
 const CryptoPayPage = (props)=>{
+  UseRedirectToHttps()
+
     const [visible, setVisible] = useState(false);
 
     const [modalShow, setModalShow] = useState(false);

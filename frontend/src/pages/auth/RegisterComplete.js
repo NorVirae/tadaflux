@@ -8,12 +8,15 @@ import PasswordStrengthBar from 'react-password-strength-bar';
 import Logo from '../../components/layout/partials/Logo';
 
 import {MailOutlined, LoadingOutlined , GoogleOutlined} from '@ant-design/icons';
+import UseRedirectToHttps from '../../utils/useRedirectHttps';
 
 
 
 
 
 const RegisterComplete = (props)=>{
+  UseRedirectToHttps()
+
     const dispatch = useDispatch()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

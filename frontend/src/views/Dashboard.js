@@ -17,11 +17,13 @@ import {
 } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import checkAct from "../functions/checkForActivation";
+import UseRedirectToHttps from "../utils/useRedirectHttps";
 
 function Dashboard(props) {
 
   const user = useSelector(state=>state.user)
 
+  UseRedirectToHttps()
 
   useEffect(()=>{
     

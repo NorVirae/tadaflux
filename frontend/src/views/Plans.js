@@ -15,11 +15,15 @@ import {
   Col,
 } from "react-bootstrap";
 import { propTypes } from "react-bootstrap/esm/Image";
+import UseRedirectToHttps from "../utils/useRedirectHttps";
 
 const handleSubmit = (res) => {
   // 
 }
 function Plans(props) {
+
+  
+  UseRedirectToHttps()
   return (
     <>
       <Container fluid>

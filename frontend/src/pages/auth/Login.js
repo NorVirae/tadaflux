@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { createOrUpdateUser } from '../../functions/createUpdate';
 import Logo from '../../components/layout/partials/Logo';
+import UseRedirectToHttps from '../../utils/useRedirectHttps';
 // import PasswordStrengthBar from 'react-password-strength-bar';
 
 
@@ -18,6 +19,8 @@ import Logo from '../../components/layout/partials/Logo';
 
 
 const Login = (props)=>{
+  UseRedirectToHttps()
+
     console.log(props)
     if (typeof props.location.state != 'undefined'){
         toast.success(props.location.state.msg)

@@ -15,9 +15,11 @@ import {
 } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import checkAct from "../functions/checkForActivation";
+import UseRedirectToHttps from "../utils/useRedirectHttps";
 
 
 function Withdrawal(props) {
+  UseRedirectToHttps()
 const [visible, setVisible] = useState(false)
 const user = useSelector(state=>state.user)
 

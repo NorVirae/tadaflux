@@ -2,9 +2,11 @@ import { AutoComplete } from 'antd';
 import React from 'react';
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
+import UseRedirectToHttps from '../utils/useRedirectHttps';
 
 
 const TermsAndCondition = (props)=>{
+  UseRedirectToHttps()
 
     const [isOpen, setIsOpen] = React.useState(false);
 

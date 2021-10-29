@@ -6,9 +6,10 @@ import FeaturesSplit from '../components/sections/FeaturesSplit';
 import Testimonial from '../components/sections/Testimonial';
 import Cta from '../components/sections/Cta';
 import Modal from '../components/elements/Modal';
+import UseRedirectToHttps from '../utils/useRedirectHttps';
 
 const Home = () => {
-
+  UseRedirectToHttps()
   return (
     <>
       <Hero className="illustration-section-01" />

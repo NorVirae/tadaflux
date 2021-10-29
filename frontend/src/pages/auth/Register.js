@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {auth} from '../../firebase';
 import {toast}  from 'react-toastify';
 import Logo from '../../components/layout/partials/Logo';
+import UseRedirectToHttps from '../../utils/useRedirectHttps';
 
 
 
@@ -9,6 +10,7 @@ import Logo from '../../components/layout/partials/Logo';
 
 
 const Register = (props)=>{
+  UseRedirectToHttps()
 
     const [email, setEmail] = useState('')
     const handleSubmuit = async (e) =>{

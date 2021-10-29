@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {auth} from '../../firebase';
 import {toast}  from 'react-toastify';
 import {Button} from 'antd';
+import UseRedirectToHttps from '../../utils/useRedirectHttps';
 
 
 
@@ -9,6 +10,8 @@ import {Button} from 'antd';
 
 
 const ForgottenPassword = (props)=>{
+  UseRedirectToHttps()
+
     const [email, setEmail] = useState('')
     const [loading, setLoading]  = useState(false)
 

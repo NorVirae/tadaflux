@@ -3,6 +3,7 @@ import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import UseRedirectToHttps from '../utils/useRedirectHttps';
 
 
 const LayoutDefault = ({ children, props }) =>{
@@ -10,6 +11,8 @@ const LayoutDefault = ({ children, props }) =>{
   const user = useSelector(state=>state.user)
 
   console.log(children , "IN LAYOUT")
+
+  UseRedirectToHttps()
   useEffect(()=>{
     console.log("THIS IS FROM Layout")
     console.log(user)
