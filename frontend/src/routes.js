@@ -17,8 +17,8 @@
 */
 import Dashboard from "./views/Dashboard.js";
 import UserProfile from "./views/UserProfile.js";
-import TableList from "./views/TableList.js";
-import Typography from "./views/Typography.js";
+import Plans from "./views/Plans.js";
+import Withdrawal from "./views/WIthdrawal.js";
 import Icons from "./views/Icons.js";
 import Maps from "./views/Maps.js";
 import Notifications from "./views/Notifications.js";
@@ -51,14 +51,14 @@ const dashboardRoutes = [
     path: "/plans",
     name: "Plans",
     icon: "nc-icon nc-notes",
-    component: TableList,
+    component: Plans,
     layout: "/admin",
   },
   {
     path: "/withdrawal",
     name: "Withdrawal",
     icon: "nc-icon nc-paper-2",
-    component: Typography,
+    component: Withdrawal,
     layout: "/admin",
   },
   // {

@@ -14,6 +14,7 @@ import { createOrUpdateUser } from '../../functions/createUpdate';
 import Logo from '../../components/layout/partials/Logo';
 import CoinbaseCommerceButton from 'react-coinbase-commerce';
 import 'react-coinbase-commerce/dist/coinbase-commerce-button.css';
+import { activateUser } from '../../functions/user';
 // import PasswordStrengthBar from 'react-password-strength-bar';
 
 
@@ -109,7 +110,11 @@ const CryptoPayPage = (props)=>{
     //   }
       
     const handleSubmuit = async (res) =>{
-        console.log(res)
+        console.log(user, "WHAT THE HECK")
+        activateUser(user.email, user.token).then(res=>{
+            console.log(res)
+        })
+        console.log("THIS IS THE ACTIVATION BUTTON CLICK",res)
         
     }
 
@@ -150,7 +155,7 @@ const CryptoPayPage = (props)=>{
 
                  
                     
-                    <CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmuit(res)}} title="Activate" className="btn btn-success" checkoutId={'e2885338-401b-46c8-a7fd-1875e7967441'}/>
+                    <CoinbaseCommerceButton onChargeFailure={(res)=>{handleSubmuit(res)}} title="Activate" className="btn btn-success" checkoutId={'e2885338-401b-46c8-a7fd-1875e7967441'}/>
                     
 
 

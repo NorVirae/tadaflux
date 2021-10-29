@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 const checkAct = (props, user)=>{
     // const user = useSelector(state=>state.user)
     if (user){
-            if (user.activated == "true"){
+            if (user.activated){
                 props.history.push("/admin/dashboard")
 
             }else {

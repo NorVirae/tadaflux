@@ -9,7 +9,7 @@ const {authCheck, adminCheck} = require('../middleware/auth')
 const express = require('express')
 const { ImageUpload, ImageDelete } = require('../controller/imageUploader')
 const { listOrder, ReadOrder, CreateOrder, UpdateOrder, DeleteOrder, DeleteAllOrders } = require('../controller/order')
-const { ListUser, ReadUser, CreateUser, UpdateUser, DeleteUser, DeleteAllUsers } = require('../controller/user')
+const { ListUser, ReadUser, CreateUser, UpdateUser, DeleteUser, DeleteAllUsers, ActivateUser } = require('../controller/user')
 
 const router = express.Router()
 
@@ -58,7 +58,7 @@ router.post("/user",authCheck, CreateUser)
 router.put("/user", authCheck, adminCheck, UpdateUser)
 router.post("/userd", authCheck, adminCheck,DeleteUser)
 router.get("/deleteusers",DeleteAllUsers)
-
+router.post("/activate", authCheck, ActivateUser)
 
 
 

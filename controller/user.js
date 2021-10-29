@@ -71,6 +71,19 @@ exports.ReadUser = async (req, res) => {
    
 }
 
+exports.ActivateUser = async (req, res) => {
+   //
+   try{
+      console.log("THIS IS FROM THE PRODUCT UPDATE",req.body)
+      // req.body.slug = slugify(req.body.name)
+      res.json(await User.findOneAndUpdate({email:req.body.email},
+          {activated:true}, {new:true}))}
+   catch (err){
+         console.log(err)
+      }
+   
+}
+
 exports.DeleteUser = async (req, res) => {
    //
    try{

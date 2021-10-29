@@ -7,6 +7,7 @@ import { createOrUpdateUser } from '../../functions/createUpdate';
 import PasswordStrengthBar from 'react-password-strength-bar';
 import Logo from '../../components/layout/partials/Logo';
 
+import {MailOutlined, LoadingOutlined , GoogleOutlined} from '@ant-design/icons';
 
 
 
@@ -16,9 +17,10 @@ const RegisterComplete = (props)=>{
     const dispatch = useDispatch()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
     // const createOrUpdateUser = async (authToken) => {
     //     console.log(process.env.REACT_APP_API)
-    //     return await axios.post("http://localhost:8000/api/createupdateuser", {},
+    //     return await axios.post(process.env.REACT_APP_LOCALHOST+"/api/createupdateuser", {},
     //         {headers:{authToken}})
     // }
 
@@ -54,9 +56,10 @@ const RegisterComplete = (props)=>{
                 const getIdTokenResult = await user.getIdTokenResult()
                 //use redux
                 
+                setLoading(true)
+
                 // console.log(`user ${user.email} idToken ${getIdTokenResult.token}`)
                 createOrUpdateUser(getIdTokenResult.token).then((res)=>{
-
                     dispatch({type:"LOGGED_IN_USER", payload:{email:user.email,
                          token:getIdTokenResult.token,
                             activated:res.data.activated,
@@ -64,9 +67,12 @@ const RegisterComplete = (props)=>{
                         picture: res.data.picture,
                         role:res.data.role}})
                     toast.success("you have been logged in successfully")
+                    setLoading(false)
     
                 }).catch(err =>{
+                    setLoading(false)
                     console.log(err)
+                    toast.error(err.message)
                 })
 
                 //redire
@@ -74,6 +80,8 @@ const RegisterComplete = (props)=>{
             }
         }
         catch(err){
+            toast.error(err)
+
             console.log("Error ",err)
         }
         // console.log(process.env.REACT_APP_REGISTER_EMAIL_URL)
@@ -95,7 +103,7 @@ const RegisterComplete = (props)=>{
             <input placeholder="password" className={"form-control"} onChange={e=>setPassword(e.target.value)} type={'password'} autoFocus />
             {password?<PasswordStrengthBar className={"col-lg-12 mx-1 d-block"} password={password}/>:null}
 
-            <button className={"btn btn-raised"} type={"submit"}>Register Complete</button>
+            {loading?<LoadingOutlined />:<button  className={"btn btn-raised"} type={"submit"}>Register Complete</button>}
         </form>
     return (
     <div className={"container p-5"}>
