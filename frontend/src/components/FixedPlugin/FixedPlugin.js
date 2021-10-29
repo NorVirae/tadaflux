@@ -153,21 +153,12 @@ function FixedPlugin({
               <img alt="..." src={sideBarImage4}></img>
             </a>
           </li>
-          <li className="button-container">
+          {/* <li className="button-container">
             <div>
-              <Button
-                block
-                className="btn-fill"
-                href="http://www.creative-tim.com/product/light-bootstrap-dashboard-react"
-                rel="noopener noreferrer"
-                target="_blank"
-                variant="info"
-              >
-                Download, it's free!
-              </Button>
+              
             </div>
-          </li>
-          <li className="button-container">
+          </li> */}
+          {/* <li className="button-container">
             <div>
               <Button
                 block
@@ -180,8 +171,8 @@ function FixedPlugin({
                 Checkout docs.
               </Button>
             </div>
-          </li>
-          <li className="header-title pro-title text-center">
+          </li> */}
+          {/* <li className="header-title pro-title text-center">
             Want more components?
           </li>
           <li className="button-container">
@@ -195,12 +186,12 @@ function FixedPlugin({
                 variant="primary"
               >
                 Get The PRO Version!
-              </Button>
-            </div>
-          </li>
-          <li className="header-title" id="sharrreTitle">
+              </Button> */}
+            {/* </div>
+          </li> */}
+          {/* <li className="header-title" id="sharrreTitle">
             Thank you for sharing!
-          </li>
+          </li> */}
           <li className="button-container mb-4">
             <Button
               className="btn-social btn-outline btn-round sharrre"

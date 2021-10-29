@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import ChartistGraph from "react-chartist";
 // react-bootstrap components
 import {
@@ -20,7 +20,19 @@ import checkAct from "../functions/checkForActivation";
 import UseRedirectToHttps from "../utils/useRedirectHttps";
 
 function Dashboard(props) {
+  const [amount, setAmount] = useState(0)
+  const [profit, setProfit] = useState(0)
+  const fetchPlanPrice = (plans) => {
+    console.log("THIS IS PLANS ", plans)
+    let sum = 0
+    let prof = 0
+    for (let count =0; count<plans.length; count++){
+      sum += plans[count].price
+      prof += plans[count].profit
+    }
 
+    setAmount(sum)
+  }
   const user = useSelector(state=>state.user)
 
   UseRedirectToHttps()
@@ -28,6 +40,7 @@ function Dashboard(props) {
   useEffect(()=>{
     
       checkAct(props, user)
+      fetchPlanPrice(user.plans)
     return ()=>{}
   }, [])
   
@@ -48,7 +61,7 @@ function Dashboard(props) {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Account Balance</p>
-                      <Card.Title as="h4">$50</Card.Title>
+                      <Card.Title as="h4">${amount}</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -74,7 +87,7 @@ function Dashboard(props) {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Profit</p>
-                      <Card.Title as="h4">$ 13.5</Card.Title>
+                      <Card.Title as="h4">$ {profit}</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -99,8 +112,8 @@ function Dashboard(props) {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category"> BTC</p>
-                      <Card.Title as="h4">0.045783</Card.Title>
+                      <p className="card-category"> USDT</p>
+                      <Card.Title as="h4">100</Card.Title>
                     </div>
                   </Col>
                 </Row>

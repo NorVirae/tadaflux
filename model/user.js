@@ -23,8 +23,13 @@ const userSchema = new mongoose.Schema({
     activated: {
         type: Boolean,
         default:false
-    }
+    },
 
+    plans: [{name:{type:String},
+            price:{type:Number},
+            profit:{type:Number},
+            active:{type:Boolean}   
+            }],
 }, {timestamps:true})
 
 module.exports = mongoose.model('User', userSchema)

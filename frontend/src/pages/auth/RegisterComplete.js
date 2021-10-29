@@ -63,11 +63,14 @@ const RegisterComplete = (props)=>{
 
                 // console.log(`user ${user.email} idToken ${getIdTokenResult.token}`)
                 createOrUpdateUser(getIdTokenResult.token).then((res)=>{
+                    console.log(res)
                     dispatch({type:"LOGGED_IN_USER", payload:{email:user.email,
                          token:getIdTokenResult.token,
                             activated:res.data.activated,
                             name: res.data.name,
                         picture: res.data.picture,
+                    plans:res.data.plans,
+
                         role:res.data.role}})
                     toast.success("you have been logged in successfully")
                     setLoading(false)

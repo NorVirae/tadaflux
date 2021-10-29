@@ -24,6 +24,26 @@ export const activateUser = async (values, authToken) => {
 
 }
 
+export const activatePlan = async ({plans, email, authToken}) => {
+    console.log("FroM ACTIVATE PLAN", plans, email)
+    return await axios.post(process.env.REACT_APP_LOCALHOST+"/api/activateplan", {email, plans}, {headers:{authToken}})
+
+}
+
+export const fetchPlans = async ({plans, email, authToken}) => {
+    console.log("FroM ACTIVATE PLAN", plans, email)
+    return await axios.post(process.env.REACT_APP_LOCALHOST+"/api/activateplan", {email, plans}, {headers:{authToken}})
+
+}
+
+export const deletePlans = async ({plans, email, authToken}) => {
+    console.log("FroM ACTIVATE PLAN", plans, email)
+    return await axios.post(process.env.REACT_APP_LOCALHOST+"/api/activateplan", {email, plans}, {headers:{authToken}})
+
+}
+
+
+
 export const deleteUser = async (id, authToken) => {
     console.log("THIS IS STRICTLY FROM TTHE DELETE CAT",authToken)
     return await axios.post(process.env.REACT_APP_LOCALHOST+"/api/userd", {id}, {headers:{authToken}})

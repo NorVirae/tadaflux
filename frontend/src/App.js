@@ -67,7 +67,8 @@ const App = () => {
                     activated:res.data.activated,
                      token:idTokenResult.token, 
                       name: res.data.name,
-                      picture: res.data.picture}
+                      picture: res.data.picture,
+                      plans:res.data.plans}
               })
           }).catch((err)=>{
               console.log(err)

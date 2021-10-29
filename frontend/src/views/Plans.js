@@ -16,14 +16,24 @@ import {
 } from "react-bootstrap";
 import { propTypes } from "react-bootstrap/esm/Image";
 import UseRedirectToHttps from "../utils/useRedirectHttps";
+import { activatePlan } from "../functions/user";
+import { useSelector } from "react-redux";
 
-const handleSubmit = (res) => {
-  // 
-}
+
 function Plans(props) {
 
-  
   UseRedirectToHttps()
+
+
+const user = useSelector(state=>state.user)
+    const handleSubmit = (res, plans) => {
+    // 
+      activatePlan({plans, email:user.email, authToken:user.token }).then(res=>{
+        console.log(res)
+      })
+  }
+
+
   return (
     <>
       <Container fluid>
@@ -58,7 +68,7 @@ function Plans(props) {
                       <td>398% of innitial investment</td>
                       <td>100$ per month, full withdrawal is in 6 - 12 months</td>
                       <td>Eth,BTC,USDC,USDT,XRP</td>
-                      <td><CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmit(res)}} title="Activate" className="btn btn-success" checkoutId={'1a405985-9fea-4d03-96ba-3ba72b7f5c61'}/></td>
+                      <td><CoinbaseCommerceButton onChargeFailure={(res)=>{handleSubmit(res,{name:"fifty", price:50, profit:0, active:true})}} title="Activate" className="btn btn-success" checkoutId={'1a405985-9fea-4d03-96ba-3ba72b7f5c61'}/></td>
                       {/* https://commerce.coinbase.com/checkout/1a405985-9fea-4d03-96ba-3ba72b7f5c61 */}
                     </tr>
                     
@@ -70,7 +80,7 @@ function Plans(props) {
                       <td>397.5% of innitial investment</td>
                       <td>250$ per month, full withdrawal is in 6 - 12 months</td>
                       <td>Eth,BTC,USDC,USDT,XRP</td>
-                      <td><CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmit(res)}} title="Activate" className="btn btn-success" checkoutId={'e0a93433-14bb-46ac-8553-4fb70df8e50a'}/></td>
+                      <td><CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmit(res,{name:"hundred", price:100, profit:0, active:true})}} title="Activate" className="btn btn-success" checkoutId={'e0a93433-14bb-46ac-8553-4fb70df8e50a'}/></td>
                       {/* https://commerce.coinbase.com/checkout/e0a93433-14bb-46ac-8553-4fb70df8e50a */}
                     </tr>
                     <tr>
@@ -81,7 +91,7 @@ function Plans(props) {
                       <td>$350 per month, full withdrawal is in 4 - 12 months</td>
                       <td>All Defi',Eth,BTC,USDC,USDT,XRP</td>
                      
-                      <td><CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmit(res)}} title="Activate" className="btn btn-success" checkoutId={'a9ed0085-2926-4cac-9855-692b9ee136fe'}/></td>
+                      <td><CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmit(res,{name:"twofifty", price:250, profit:0, active:true})}} title="Activate" className="btn btn-success" checkoutId={'a9ed0085-2926-4cac-9855-692b9ee136fe'}/></td>
                       {/* https://commerce.coinbase.com/checkout/a9ed0085-2926-4cac-9855-692b9ee136fe */}
                     </tr>
 
@@ -92,7 +102,7 @@ function Plans(props) {
                       <td></td>
                       <td>$670 per month, full withdrawal is in 6 - 12 months</td>
                       <td>Eth,BTC,USDC,USDT,XRP</td>
-                      <td><CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmit(res)}} title="Activate" className="btn btn-success" checkoutId={'c01afe4f-b0b6-4d7f-b9df-a71489f834e7'}/></td>
+                      <td><CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmit(res,{name:"fivehundred", price:500, profit:0, active:true})}} title="Activate" className="btn btn-success" checkoutId={'c01afe4f-b0b6-4d7f-b9df-a71489f834e7'}/></td>
                       {/* https://commerce.coinbase.com/checkout/c01afe4f-b0b6-4d7f-b9df-a71489f834e7 */}
                     </tr>
                     
@@ -103,7 +113,7 @@ function Plans(props) {
                       <td></td>
                       <td>$1000 per month, full withdrawal is in 8 - 12 months</td>
                       <td>Eth,BTC,USDC,USDT,XRP</td>
-                      <td><CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmit(res)}} title="Activate" className="btn btn-success" checkoutId={'bc042746-3143-4e02-8f13-d89a5f4ee575'}/></td>
+                      <td><CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmit(res,{name:"onethousand", price:1000, profit:0, active:true})}} title="Activate" className="btn btn-success" checkoutId={'bc042746-3143-4e02-8f13-d89a5f4ee575'}/></td>
                       {/* https://commerce.coinbase.com/checkout/bc042746-3143-4e02-8f13-d89a5f4ee575 */}
                     </tr>
 
@@ -114,7 +124,7 @@ function Plans(props) {
                       <td></td>
                       <td>$1000 per month, full withdrawal is in 9 - 12 months</td>
                       <td>Eth,BTC,USDC,USDT,XRP</td>
-                      <td><CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmit(res)}} title="Activate" className="btn btn-success" checkoutId={'af485876-77df-4f0c-92ab-23a2608a26f6'}/></td>
+                      <td><CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmit(res,{name:"fivethousand", price:5000, profit:0, active:true})}} title="Activate" className="btn btn-success" checkoutId={'af485876-77df-4f0c-92ab-23a2608a26f6'}/></td>
                       {/* https://commerce.coinbase.com/checkout/af485876-77df-4f0c-92ab-23a2608a26f6 */}
                     </tr>
                   </tbody>

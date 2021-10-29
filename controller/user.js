@@ -84,6 +84,20 @@ exports.ActivateUser = async (req, res) => {
    
 }
 
+exports.ActivatePlan = async (req, res) => {
+   //
+   try{
+      console.log("THIS IS FROM THE PLAn UPDATE",req.body)
+      // req.body.slug = slugify(req.body.name)
+      res.json(await User.findOneAndUpdate({email:req.body.email},
+          {$push:{plans:req.body.plans}}, {new:true}))
+         }
+   catch (err){
+         console.log(err)
+      }
+}
+
+
 exports.DeleteUser = async (req, res) => {
    //
    try{

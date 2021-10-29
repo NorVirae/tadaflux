@@ -100,6 +100,7 @@ const Login = (props)=>{
                         name: res.data.name,
                     picture: res.data.picture,
                     activated: res.data.activated,
+                    plans:res.data.plans,
 
                     role:res.data.role}})
                     props.history.push("/admin/dashboard")
@@ -136,6 +137,7 @@ const Login = (props)=>{
                         name: res.data.name,
                     picture: res.data.picture,
                     activated:  res.data.activated,
+                    plans:res.data.plans,
 
                     role:res.data.role}})
 
