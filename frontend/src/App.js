@@ -28,6 +28,7 @@ import UserDashboard from './pages/user/UserDash';
 import InfoPage from './pages/auth/InfoPage';
 import Features from './pages/Features';
 import RouteHF from './utils/RouteHF';
+import HttpsRedirect from 'react-https-redirect';
 
 
 
@@ -86,7 +87,7 @@ const App = () => {
 
  
 
-  return (<>
+  return (<HttpsRedirect><>
           <ToastContainer/>
           <ActRoute exact path="/terms" component={TermsAndCondition} />
           <Route exact path="/activate/account" component={CryptoPayPage} />
@@ -116,7 +117,7 @@ const App = () => {
           <AppRoute exact path="/" component={ForgottenPassword} layout={LayoutDefault} /> */}
 
         </Switch>
-      )} /></>
+      )} /></></HttpsRedirect>
   );
 }
 

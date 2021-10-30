@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
 import firebase from "firebase";
@@ -62,6 +62,11 @@ function Header() {
     }
     return "Brand";
   };
+
+  useEffect(()=>{
+
+    return ()=>{}
+  },[user])
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -162,7 +167,7 @@ function Header() {
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
               >
-               <Link to={"/admin/dashboard"}> <span className="no-icon">Account</span></Link>
+               <Link to={"/admin/dashboard"}> <span className="no-icon h4 border border-rounded p-2 text-success">{user ?user.email[0].toUpperCase():"loading..."}</span></Link>
               </Nav.Link>
             </Nav.Item>
             {/* <Dropdown as={Nav.Item}>

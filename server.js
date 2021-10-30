@@ -34,6 +34,14 @@ app.use(express.static(__dirname+"/build"))
 
 readdirSync("./routes").map((r)=>app.use('/api', require('./routes/'+r)))
 
+app.get("*", function(req, res, next){
+    if ("https" !== req.headers["x-forwarded-proto"] && "production" === process.env.NODE_ENV){
+        res.redirect("https://"+req.hostname+req.url);
+    }else {
+        next();
+    }
+});
+
 app.get("/", (req, res)=>{
     res.sendFile(__dirname+"/build/"+"index.html")
 })

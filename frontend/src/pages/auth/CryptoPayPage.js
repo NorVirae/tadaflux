@@ -158,7 +158,7 @@ const CryptoPayPage = (props)=>{
 
                  
                     
-                    <CoinbaseCommerceButton onChargeFailure={(res)=>{handleSubmuit(res)}} title="Activate" className="btn btn-success" checkoutId={'e2885338-401b-46c8-a7fd-1875e7967441'}/>
+                    <CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmuit(res)}} title="Activate" className="btn btn-success" checkoutId={'e2885338-401b-46c8-a7fd-1875e7967441'}/>
                     
 
 

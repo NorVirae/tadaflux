@@ -68,7 +68,7 @@ const user = useSelector(state=>state.user)
                       <td>398% of innitial investment</td>
                       <td>100$ per month, full withdrawal is in 6 - 12 months</td>
                       <td>Eth,BTC,USDC,USDT,XRP</td>
-                      <td><CoinbaseCommerceButton onChargeFailure={(res)=>{handleSubmit(res,{name:"fifty", price:50, profit:0, active:true})}} title="Activate" className="btn btn-success" checkoutId={'1a405985-9fea-4d03-96ba-3ba72b7f5c61'}/></td>
+                      <td><CoinbaseCommerceButton onChargeSuccess={(res)=>{handleSubmit(res,{name:"fifty", price:50, profit:0, active:true})}} title="Activate" className="btn btn-success" checkoutId={'1a405985-9fea-4d03-96ba-3ba72b7f5c61'}/></td>
                       {/* https://commerce.coinbase.com/checkout/1a405985-9fea-4d03-96ba-3ba72b7f5c61 */}
                     </tr>
                     

@@ -40,7 +40,11 @@ function Dashboard(props) {
   useEffect(()=>{
     
       checkAct(props, user)
-      fetchPlanPrice(user.plans)
+
+      if (user){
+        fetchPlanPrice(user.plans)
+
+      }
     return ()=>{}
   }, [])
   
@@ -113,7 +117,7 @@ function Dashboard(props) {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category"> USDT</p>
-                      <Card.Title as="h4">100</Card.Title>
+                      <Card.Title as="h4">{amount}</Card.Title>
                     </div>
                   </Col>
                 </Row>
