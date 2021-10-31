@@ -167,7 +167,8 @@ function Header() {
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
               >
-               <Link to={"/admin/dashboard"}> <span className="no-icon h4 border border-rounded p-2 text-success">{user ?user.email[0].toUpperCase():"loading..."}</span></Link>
+               <Link to={"/admin/dashboard"}> {user ?
+               <img style={{borderRadius:"50%", width:50, height:50}} className={"d-inline"} src={user.picture} />:"loading..." }</Link>
               </Nav.Link>
             </Nav.Item>
             {/* <Dropdown as={Nav.Item}>

@@ -20,6 +20,26 @@ const userSchema = new mongoose.Schema({
         type: String
     },
 
+    first: {
+        type: String
+    },
+
+    last: {
+        type: String
+    },
+
+    city: {
+        type: String
+    },
+
+    state: {
+        type: String
+    },
+
+    country: {
+        type: String
+    },
+
     activated: {
         type: Boolean,
         default:false

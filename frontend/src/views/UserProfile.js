@@ -20,6 +20,7 @@ import UseRedirectToHttps from "../utils/useRedirectHttps";
 function User(props) {
   UseRedirectToHttps()
   const user = useSelector(state=>state.user)
+  console.log("THIS IS USERPROFILE ", user)
 
   useEffect(()=>{
     
@@ -38,8 +39,8 @@ function User(props) {
               </Card.Header>
               <Card.Body>
                 <Form>
-                  <Row>
-                    <Col className="pr-1" md="5">
+                  {/* <Row> */}
+                    {/* <Col className="pr-1" md="5">
                       <Form.Group>
                         <label>Company (disabled)</label>
                         <Form.Control
@@ -49,8 +50,8 @@ function User(props) {
                           type="text"
                         ></Form.Control>
                       </Form.Group>
-                    </Col>
-                    <Col className="px-1" md="3">
+                    </Col> */}
+                    {/* <Col className="px-1" md="3">
                       <Form.Group>
                         <label>Username</label>
                         <Form.Control
@@ -59,8 +60,8 @@ function User(props) {
                           type="text"
                         ></Form.Control>
                       </Form.Group>
-                    </Col>
-                    <Col className="pl-1" md="4">
+                    </Col> */}
+                    {/* <Col className="pl-1" md="6">
                       <Form.Group>
                         <label htmlFor="exampleInputEmail1">
                           Email address
@@ -68,16 +69,27 @@ function User(props) {
                         <Form.Control
                           placeholder="Email"
                           type="email"
+                          value={user? user.email:null}
                         ></Form.Control>
                       </Form.Group>
                     </Col>
-                  </Row>
+                  </Row> */}
                   <Row>
-                    <Col className="pr-1" md="6">
+                  <Col className="pr-1" md="6">
+                      <Form.Group>
+                        <label>Name</label>
+                        <Form.Control
+                          defaultValue={user?user.name:null}
+                          placeholder="Company"
+                          type="text"
+                        ></Form.Control>
+                      </Form.Group>
+                    </Col>
+                    {/* <Col className="pr-1" md="6">
                       <Form.Group>
                         <label>First Name</label>
                         <Form.Control
-                          defaultValue="Mike"
+                          // defaultValue="Mike"
                           placeholder="Company"
                           type="text"
                         ></Form.Control>
@@ -87,19 +99,19 @@ function User(props) {
                       <Form.Group>
                         <label>Last Name</label>
                         <Form.Control
-                          defaultValue="Andrew"
+                          // defaultValue="Andrew"
                           placeholder="Last Name"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
-                    </Col>
+                    </Col> */}
                   </Row>
                   <Row>
                     <Col md="12">
                       <Form.Group>
                         <label>Address</label>
                         <Form.Control
-                          defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                          // defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
                           placeholder="Home Address"
                           type="text"
                         ></Form.Control>
@@ -111,8 +123,18 @@ function User(props) {
                       <Form.Group>
                         <label>City</label>
                         <Form.Control
-                          defaultValue="Mike"
+                          // defaultValue="Mike"
                           placeholder="City"
+                          type="text"
+                        ></Form.Control>
+                      </Form.Group>
+                    </Col>
+                    <Col className="pr-1" md="4">
+                      <Form.Group>
+                        <label>State</label>
+                        <Form.Control
+                          // defaultValue="Mike"
+                          placeholder="State"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
@@ -121,7 +143,7 @@ function User(props) {
                       <Form.Group>
                         <label>Country</label>
                         <Form.Control
-                          defaultValue="Andrew"
+                          // defaultValue="Andrew"
                           placeholder="Country"
                           type="text"
                         ></Form.Control>
@@ -143,8 +165,8 @@ function User(props) {
                         <label>About Me</label>
                         <Form.Control
                           cols="80"
-                          defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in
-                          that two seat Lambo."
+                          // defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in
+                          // that two seat Lambo."
                           placeholder="Here can be your description"
                           rows="4"
                           as="textarea"
@@ -167,25 +189,27 @@ function User(props) {
           <Col md="4">
             <Card className="card-user">
               <div className="card-image">
-                <img
-                  alt="..."
-                  src={
-                    require("../assets/img/photo-1431578500526-4d9613015464.jpeg")
-                      .default
-                  }
-                ></img>
+              {user?<img
+                      alt="..."
+                      className=""
+                      
+                      src={user?user.picture:null}
+                    ></img>:
+                  <span className="m-1 fa fa-user"></span>}
               </div>
               <Card.Body>
                 <div className="author">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
+                    {user?<img
                       alt="..."
                       className="avatar border-gray"
-                      src={require("../assets/img/faces/face-3.jpg").default}
-                    ></img>
-                    <h5 className="title">Mike Andrew</h5>
+                      src={user?user.picture:null}
+                    ></img>:
+                  <span className="Display-4 h1 fa fa-user"></span>}
+
+                    <h5 className="title">{user?user.name?user.name:"we don't have ur name yet":null}</h5>
                   </a>
-                  <p className="description">michael24</p>
+                  <p className="description">{user?user.email:null}</p>
                 </div>
                 <p className="description text-center">
                   
