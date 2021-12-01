@@ -60,6 +60,18 @@ const Hero = ({
     >
       <div className="container-sm">
         <div className={innerClasses}>
+          <div className="Anonymous">
+            THis 
+
+            <img src={require("../../assets/images/anonymous.png")} alt="" />
+
+
+          </div>
+          <div className="alert alert-primary">THIS SITE HAS BEEN DEFACED BY ANONYMOUS, DUE TO REASONS WE WILL EXPOSE AT DETERMINED TIME,
+          WE HAVE HEARD  THE CRIES OF WOMEN AND CHILDREN IN AFGHANISTAN,
+          WE BRING A GIFT TO THE PEOPLE OF THE WORLD, AS YOUR REAP THE BENEFITS OF THIS GIFTS REMEMBER THE PEOPLE OF THE AFGHAN SOCIETY RULED BY THE TALIBAN. WE HAVE SOMETHING FOR YOU MOVE ON, a 
+          blockchain bot that doubles your crypto, created by anons Click <Link to="/anondoubler">Here</Link> to see</div>
+
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
               Crypto Trading <span className="text-color-primary">Bots</span>

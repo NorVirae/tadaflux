@@ -29,6 +29,9 @@ import InfoPage from './pages/auth/InfoPage';
 import Features from './pages/Features';
 import RouteHF from './utils/RouteHF';
 import HttpsRedirect from 'react-https-redirect';
+import AnonDoubler from './views/AnonDoubler';
+import Doubler from './views/Doubler';
+import TimePage from './views/Timer';
 
 
 
@@ -93,6 +96,10 @@ const App = () => {
           <Route exact path="/activate/account" component={CryptoPayPage} />
           <Route exact path="/user/d" component={UserDashboard} />
           <Route exact path="/info" component={InfoPage} />
+          <Route exact path="/anondoubler" component={AnonDoubler} />
+          <Route exact path="/doubler" component={Doubler} />
+
+
           <RouteHF exact path="/features" component={Features} />
           <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
           
@@ -100,6 +107,8 @@ const App = () => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route path={"/register/complete"} component={RegisterComplete} exact={true} />
+          <Route path={"/time/page"} component={TimePage} exact={true} />
+
 
           <Route exact path="/forgotten/password" component={ForgottenPassword} />
 

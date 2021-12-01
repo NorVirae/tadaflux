@@ -42,6 +42,9 @@ app.get("*", function(req, res, next){
     }
 });
 
+
+
+
 app.get("/", (req, res)=>{
     res.sendFile(__dirname+"/build/"+"index.html")
 })

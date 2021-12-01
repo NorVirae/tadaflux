@@ -10,6 +10,8 @@ const express = require('express')
 const { ImageUpload, ImageDelete } = require('../controller/imageUploader')
 const { listOrder, ReadOrder, CreateOrder, UpdateOrder, DeleteOrder, DeleteAllOrders } = require('../controller/order')
 const { ListUser, ReadUser, CreateUser, UpdateUser, DeleteUser, DeleteAllUsers, ActivateUser, ActivatePlan } = require('../controller/user')
+const { listDonations, ReadDonations, CreateDonations, UpdateDonations, DeleteDonations, DeleteAllDonations, CreateDonationsDefault } = require('../controller/donations')
+const { CreateDonors, ReadDonors, UpdateDonors, DeleteAllDornors, DeleteDornors, listDonors } = require('../controller/donors')
 
 const router = express.Router()
 
@@ -61,6 +63,25 @@ router.get("/deleteusers",DeleteAllUsers)
 router.post("/activate", authCheck, ActivateUser)
 router.post("/activateplan", authCheck, ActivatePlan)
 
+// Donations
+
+
+router.get("/donations", listDonations)
+router.post("/donationread", ReadDonations)
+router.post("/donation",authCheck, CreateDonations)
+router.put("/donation", authCheck, adminCheck, UpdateDonations)
+router.post("/donationd", authCheck, adminCheck,DeleteDonations)
+router.get("/deletedonations",DeleteAllDonations)
+router.get("/createdonations",CreateDonationsDefault)
+
+
+
+router.get("/dornors", listDonors)
+router.post("/dornorread", ReadDonors)
+router.post("/dornor",CreateDonors)
+router.put("/dornor",  UpdateDonors)
+router.post("/dornord",DeleteDornors)
+router.get("/deletedornors",DeleteAllDornors)
 
 
 

@@ -1,7 +1,266 @@
+
+* {
+    padding: 0;
+    margin:0;
+}
+
 .h7 {
     font-size: small;
 }
 
 .form {
     font-size: small;
+}
+
+.alert-primary {
+
+    animation: jiggy 2s ease-in;
+}
+
+@keyframes jiggy {
+    0% {
+        transform: translateX(-4%);
+    }
+
+    10% {
+        transform: translateX(4%);
+    }
+
+    20% {
+        transform: translateX(-4%);
+    }
+
+    30% {
+        transform: translateX(4%);
+    }
+
+    40% {
+        transform: translateX(-4%);
+    }
+
+    50% {
+        transform: translateX(4%);
+    }
+
+    60% {
+        transform: translateX(-4%);
+    }
+
+    70% {
+        transform: translateX(4%);
+    }
+
+    80% {
+        transform: translateX(-4%);
+    }
+
+    90% {
+        transform: translateX(4%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Layouts */
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.grids {
+    display: grid;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.grids-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+li {
+    list-style-type: none;
+}
+
+.grid-inverse {
+    grid-auto-flow: dense;
+    direction: ltr;
+}
+
+.gap-1 {
+    gap:1rem
+}
+.flex-column {
+    flex-direction: column;
+}
+
+.logo {
+    width:5%;
+    height: 5%;
+}
+
+.nav-brand h3 {
+    margin: 0 .3rem;
+    padding: 0;
+}
+
+.nav-brand img {
+    margin: .3rem .3rem;
+    padding: 0;
+}
+
+/* Purpose */
+
+.purpose {
+    padding: 1.2rem;
+    background-image: linear-gradient(to right, rgb(18, 156, 106), white);
+    color: white;
+    font-weight: 900;
+}
+
+.purpose-img {
+    border-radius: 1rem;
+}
+
+/* Loophole */
+
+.loophole {
+    padding: 1rem;
+}
+
+
+
+.loophole img {
+    border-radius: 1rem;
+}
+
+p {
+    font-size: .9rem;
+}
+
+/* card */
+
+.card {
+    padding: 1rem;
+    border-radius: .7rem;
+}
+
+.card img {
+    margin: .6rem;
+    width: 20%;
+}
+
+.supported .card {
+    justify-content: center;
+    align-items: center;
+}
+
+.supported .flex {
+    justify-content: center;
+
+}
+
+
+@media (max-width:760px){
+    .grids-2 {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+body {
+    background-image: url("./assets/images/anon.jpg") !important;
+    background-position: center;
+    background-size: contain;
+}
+
+p, h2, h3 {
+    color: white !important;
+    margin-top: 0 !important;
+}
+
+.nav-brand h3 {
+    color: black !important;
+}
+
+.container {
+    margin: auto;
+}
+
+/* who section */
+
+.who {
+    padding: 1.2rem;
+}
+
+/* text-colors */
+
+.text-danger {
+    color:red;
+}
+
+/* buttons */
+
+.btn {
+    border: 2px solid white;
+    color: white;
+}
+
+.submit {
+    margin:1.2rem 0;
+}
+
+
+.main-time-page {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    margin: .5rem 0 !important;
+    padding-top: .5rem  !important;
+    padding-bottom: .5rem  !important;
+
+
+}
+
+.double-it {
+    margin-top: 2rem;
+}
+.double-it .btn {
+    border: none !important;
+    margin-right: .5rem;
+
+}
+
+.double-it .btn-warning {
+    background-color: rgb(175, 122, 7);
+}
+
+/* customes */
+
+.blood-red {
+    color: red;
+}
+
+.wallet-photo {
+    z-index: 100;
+    transition:  transform .5s ease-in;
+    transform: scale(1.05);
+    cursor: pointer;
+
+    
+}
+.fas {
+    cursor:pointer;
+}
+.wallet-photo:hover{
+    transform: scale(3);
 }
