@@ -80,7 +80,7 @@ const updateDonorsAndMoney = async ()=>{
          amount:data.amount + getRandomInt(50)}, {new:true})
       console.log(resiponse)
 
-   }, 10000)
+   }, 700000)
 }
 
 updateDonorsAndMoney()
