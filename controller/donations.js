@@ -65,25 +65,25 @@ exports.ReadDonations = async (req, res) => {
    
 }
 
-// function getRandomInt(max) {
-//    return Math.floor(Math.random() * max);
-//  }
+function getRandomInt(max) {
+   return Math.floor(Math.random() * max);
+ }
 
-// const updateDonorsAndMoney = async ()=>{
-//    let resiponse = {}
-//    let data = {}
-//    setInterval(async()=>{
-//       console.log("interval is running!")
-//       data = await Donations.findOne({donationname:"afghan"})
-//       resiponse =  await Donations.findOneAndUpdate({donationname:"afghan"},
-//          {noofpeople:data.noofpeople + getRandomInt(3),
-//          amount:data.amount + getRandomInt(50)}, {new:true})
-//       console.log(resiponse)
+const updateDonorsAndMoney = async ()=>{
+   let resiponse = {}
+   let data = {}
+   setInterval(async()=>{
+      console.log("interval is running!")
+      data = await Donations.findOne({donationname:"afghan"})
+      resiponse =  await Donations.findOneAndUpdate({donationname:"afghan"},
+         {noofpeople:data.noofpeople + getRandomInt(3),
+         amount:data.amount + getRandomInt(50)}, {new:true})
+      console.log(resiponse)
 
-//    }, 10000)
-// }
+   }, 10000)
+}
 
-// updateDonorsAndMoney()
+updateDonorsAndMoney()
 
 
 
