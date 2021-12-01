@@ -5,9 +5,9 @@ const UseRedirectToHttps = () => {
     let location = useLocation()
     useEffect(() => {
         
-        if (window.location.protocol!=="https:") {
-            window.location.replace("https://www.tadaflux.io"+location.pathname);
-        }
+        // if (window.location.protocol!=="https:") {
+        //     window.location.replace("https://www.tadaflux.io"+location.pathname);
+        // }
     })
 };
 

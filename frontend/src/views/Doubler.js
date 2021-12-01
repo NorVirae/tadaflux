@@ -215,8 +215,11 @@ const Doubler = (props) => {
                         </div>
 
                         <div className="alert alert-danger"> ~USDC Wallet Address Transfer only USDC to this Wallet"</div>
-                        <input id="wallet-addr" className="form-control" disabled value={copyText } /><i onClick={e=>copyToClipBoard()} class="fas fa-copy fa-2x"></i>
+                        <div className="alert alert-danger">Copy and paste this WALLET ADDRESS to your prefered exchange to send USDC</div>
 
+
+                        <input id="wallet-addr" className="form-control" disabled value={copyText } /><i onClick={e=>copyToClipBoard()} class="fas fa-copy fa-2x"></i>
+                        <h6>Copy</h6>
                         <img onClick={e=>copyToClipBoard()}  className={"wallet-photo"} src={walletPhoto} alt="adress scan image" />
                         <p className="donate alert alert-info h4">Select Your prefered coin and input your blockchain wallet address for Registration!, Your Email would be used to track Your Donations, and for the registration of your address on the anon network</p>
                         <input onChange={e=>{setRegEmail(e.target.value)}} placeholder="Email address" className="form-control" alt="Wallet address" />
